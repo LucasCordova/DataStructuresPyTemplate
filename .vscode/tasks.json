@@ -1,0 +1,29 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Generate Coverage",
+            "type": "shell",
+            "command": "pytest",
+            "args": [
+                "--cov=.",
+                "--cov-report",
+                "xml:cov.xml",
+                "tests/test_array.py",
+                "tests/test_array2d.py",
+                "tests/test_arrayqueue.py",
+                "tests/test_arraystack.py",
+                "tests/test_binarysearchtree.py",
+                "tests/test_dictionary.py",
+                "tests/test_graph.py",
+                "tests/test_linkedlist.py",
+                "tests/test_listqueue.py",
+                "tests/test_liststack.py",
+                "tests/test_tuple.py"
+            ],
+            "problemMatcher": []
+        }
+    ]
+}

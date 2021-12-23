@@ -1,0 +1,6 @@
+{
+    "env": 
+    {
+        "PYTHONPATH": "${workspaceFolder}/adts${pathSeparator}${env:PYTHONPATH}"
+    }
+}
