@@ -1,5 +1,7 @@
 from typing import Any
 
+from adts.array import Array
+
 
 class CircularArrayQueue:
     """ Class CircularArrayQueue - representing a circular array queue using a 1D Array
@@ -11,18 +13,17 @@ class CircularArrayQueue:
             4. Must achieve a minimum of 92% code coverage through unit testing.
     """
 
-    def __init__(self, max_size: int = 0, instance: 'CircularArrayQueue' = None) -> None:
+    def __init__(self, max_size: int = 0) -> None:
         """ Constructor
             Usage:  queue = CircularArrayQueue(10)
-            @:param size the desired size of the queue
-            @:param instance an optional CircularArrayQueue instance to deep copy data from.
+            @:param max_size the desired size of the queue
             @:return none
-            @:raises TypeError if instance is provided and it is not an CircularArrayQueue instance
         """
         raise NotImplementedError
 
+
     @staticmethod
-    def clone(instance: 'CircularArrayQueue') -> 'CircularArrayQueue':
+    def clone(circular_array_queue_instance: 'CircularArrayQueue') -> 'CircularArrayQueue':
         """ Clone the queue
             Usage:  queue = CircularArrayQueue.clone(instance)
             @:param instance an CircularArrayQueue instance to deep copy data from.
@@ -30,6 +31,7 @@ class CircularArrayQueue:
             @:raises TypeError if instance is provided and it is not an CircularArrayQueue instance
         """
         raise NotImplementedError
+
 
     def enqueue(self, item: Any) -> None:
         """ Enqueue an item onto the queue
@@ -40,11 +42,21 @@ class CircularArrayQueue:
         """
         raise NotImplementedError
 
-    def dequeue(self) -> Any:
+
+    def dequeue(self):
         """ Dequeue an item from the queue and return the item
             Usage:   item = queue.dequeue()
             @:return item that is dequeued
             @:raises IndexError if the queue is empty
+        """
+        raise NotImplementedError
+
+
+    @property
+    def max_size(self) -> int:
+        """ Get the max size of the queue
+                Usage:   max_size = queue.max_size
+                @:return max_size the max_size of the queue
         """
         raise NotImplementedError
 
@@ -55,14 +67,16 @@ class CircularArrayQueue:
         """
         raise NotImplementedError
 
+
     @property
-    def front(self) -> Any:
+    def front(self):
         """ Get the item at the front of the queue
             Usage:   item = queue.front
             @:return item that is in the front
             @:raises IndexError if the queue is empty
         """
         raise NotImplementedError
+
 
     @property
     def full(self) -> bool:
@@ -71,6 +85,7 @@ class CircularArrayQueue:
             @:return full boolean as to whether the queue is full
         """
         raise NotImplementedError
+
 
     @property
     def empty(self) -> bool:
@@ -88,12 +103,14 @@ class CircularArrayQueue:
         """
         raise NotImplementedError
 
+
     def __len__(self) -> int:
         """ len operator for getting length of the queue
             Usage: length = len(queue)
             @:return the length of the Queue (number of items on the queue)
         """
         raise NotImplementedError
+
 
     def __str__(self) -> str:
         """ Return a string representation of the data and structure

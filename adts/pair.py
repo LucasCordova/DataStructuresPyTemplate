@@ -8,9 +8,10 @@ class Pair:
             2. Must adhere to the docstring requirements per method, including raising
                raising appropriate exceptions where indicated.
             3. Must achieve a minimum of 92% code coverage through unit testing.
+
     """
 
-    def __init__(self, first: Any = None, second: Any  = None, instance: 'Pair' = None) -> None:
+    def __init__(self, first: Any = None, second: Any = None, instance: 'Pair' = None) -> None:
         """ Constructor
             Usage:  pair = Pair('My', 'Pair')
             @:param first the desired first part of the Pair
@@ -20,6 +21,7 @@ class Pair:
             @:raises TypeError if instance is provided and it is not a Pair instance
         """
         raise NotImplementedError
+
 
     @staticmethod
     def clone(instance: 'Pair') -> 'Pair':
@@ -31,6 +33,7 @@ class Pair:
             """
         raise NotImplementedError
 
+
     def __getitem__(self, index: int) -> Any:
         """ Bracket operator for getting an item from the pair. Only [0] and [1] are permitted for index.
             Usage: val = pair[0]
@@ -40,6 +43,7 @@ class Pair:
         """
         raise NotImplementedError
 
+
     def __eq__(self, other: 'Pair') -> bool:
         """ Equality operator ==
             Usage: pair1 == pair2
@@ -48,12 +52,14 @@ class Pair:
         """
         raise NotImplementedError
 
+
     def __iter__(self) -> Any:
         """ Iterator operator
             Usage: for item in pair:
             @:return yields the item at index
         """
         raise NotImplementedError
+
 
     def __contains__(self, item: Any) -> bool:
         """ Contains operator (in)

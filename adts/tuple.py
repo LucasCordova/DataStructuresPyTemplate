@@ -14,15 +14,20 @@ class Tuple:
 
     def __init__(self, *items: tuple) -> None:
         """ Constructor
-            Usage:  tuple = Tuple('My', 'Tuple')
-            @:param *data a variable list of arguments that contain the items to be deep copied into the Tuple.
+            Usage:  1. tuple = Tuple('A', 'B')
+                    2. tuple = Tuple(('A', 'B'))
+            @:param *items a variable list of arguments that contain the items to be deep copied into the Tuple.
+                    Note: since items comes in as a tuple and a Python tuple or a Python list may be used to instantite the Tuple, 
+                    it will form an embedded tuple like (('A', 'B', 'C')) or (['A', 'B', 'C']), which must be flattened 
+                    before it can be stored in a Python tuple. 
             @:return none
             @:raises TypeError if instance is provided and it is not a Tuple instance
         """
         raise NotImplementedError
 
+
     @classmethod
-    def clone(cls, tuple_instance: 'Tuple'):
+    def clone(cls, tuple_instance: 'Tuple') -> 'Tuple':
         """ Clone the Tuple
             Usage:  tuple = Tuple.clone(tuple_instance)
             @:param tuple_instance a tuple instance to deep copy data from.
@@ -30,6 +35,15 @@ class Tuple:
             @:raises TypeError if instance is provided and it is not an Tuple instance
         """
         raise NotImplementedError
+
+
+    @staticmethod
+    def _flatten_helper(items):
+        """ This is a private helper function that flattens data down to individual items.
+            This is not part of the list of methods provided to students
+        """
+        raise NotImplementedError
+
 
     def __getitem__(self, index: int) -> Any:
         """ Bracket operator for getting an item from the Tuple. Only 0 through len(self._data) are permitted for index.
@@ -41,6 +55,7 @@ class Tuple:
         """
         raise NotImplementedError
 
+
     def __eq__(self, other: 'Tuple') -> bool:
         """ Equality operator ==
             Usage: tuple1 == tuple2
@@ -48,6 +63,7 @@ class Tuple:
             @:return true if the tuples are equal (deep check)
         """
         raise NotImplementedError
+
 
     def __ne__(self, other: 'Tuple') -> bool:
         """ Non-Equality operator !=
@@ -72,6 +88,8 @@ class Tuple:
             @:return yields the item at index
         """
         raise NotImplementedError
+
+
 
     def __contains__(self, item: Any) -> bool:
         """ Contains operator (in)

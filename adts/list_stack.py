@@ -1,5 +1,7 @@
 from typing import Any
 
+from adts.linked_list import LinkedList
+
 
 class ListStack:
     """ Class ListStack - representing a stack using a LinkedList
@@ -10,17 +12,15 @@ class ListStack:
             3. Must achieve a minimum of 92% code coverage through unit testing.
     """
 
-    def __init__(self, instance: 'ListStack' = None) -> None:
+    def __init__(self) -> None:
         """ Constructor
             Usage:  stack = ListStack()
-            @:param instance an optional ListStack instance to deep copy data from.
             @:return none
-            @:raises TypeError if instance is provided and it is not an ListStack instance
         """
         raise NotImplementedError
 
     @staticmethod
-    def clone(instance: 'ListStack') -> 'ListStack':
+    def clone(list_stack_instance: 'ListStack') -> 'ListStack':
         """ Clone the stack
             Usage:  stack = ListStack.clone(instance)
             @:param instance an ListStack instance to deep copy data from.
@@ -45,6 +45,7 @@ class ListStack:
         """
         raise NotImplementedError
 
+
     def clear(self) -> None:
         """ Clear the stack
             Usage: stack.clear():
@@ -60,6 +61,7 @@ class ListStack:
             @:raises IndexError if the stack is empty
         """
         raise NotImplementedError
+
 
     @property
     def empty(self) -> bool:
@@ -77,12 +79,14 @@ class ListStack:
         """
         raise NotImplementedError
 
+
     def __len__(self) -> int:
         """ len operator for getting length of the stack
             Usage: length = len(stack)
             @:return the length of the Stack (number of items on the stack)
         """
         raise NotImplementedError
+
 
     def __str__(self) -> str:
         """ Return a string representation of the data and structure

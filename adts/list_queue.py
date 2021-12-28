@@ -1,5 +1,7 @@
 from typing import Any
 
+from adts.linked_list import LinkedList
+
 
 class ListQueue:
     """ Class ListQueue - representing a queue based on a LinkedList
@@ -10,17 +12,15 @@ class ListQueue:
             3. Must achieve a minimum of 92% code coverage through unit testing.
     """
 
-    def __init__(self, instance: 'ListQueue' = None) -> None:
+    def __init__(self) -> None:
         """ Constructor
             Usage:  queue = ListQueue()
-            @:param instance an optional ListQueue instance to deep copy data from.
             @:return none
-            @:raises TypeError if instance is provided and it is not an ListQueue instance
         """
         raise NotImplementedError
 
     @staticmethod
-    def clone(instance: 'ListQueue') -> 'ListQueue':
+    def clone(list_queue_instance: 'ListQueue') -> 'ListQueue':
         """ Clone the queue
             Usage:  queue = ListQueue.clone(instance)
             @:param instance an ListQueue instance to deep copy data from.
@@ -28,6 +28,7 @@ class ListQueue:
             @:raises TypeError if instance is provided and it is not an ListQueue instance
         """
         raise NotImplementedError
+
 
     def enqueue(self, item: Any) -> None:
         """ Enqueue an item onto the queue
@@ -45,6 +46,7 @@ class ListQueue:
         """
         raise NotImplementedError
 
+
     def clear(self) -> None:
         """ Clear the queue
             Usage: array_queue.clear():
@@ -61,6 +63,7 @@ class ListQueue:
         """
         raise NotImplementedError
 
+
     @property
     def empty(self) -> bool:
         """ Check whether the queue is empty
@@ -76,6 +79,7 @@ class ListQueue:
             @:return true if the arrays are equal (deep check)
         """
         raise NotImplementedError
+
 
     def __len__(self) -> int:
         """ len operator for getting length of the queue

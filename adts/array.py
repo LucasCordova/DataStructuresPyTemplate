@@ -11,11 +11,15 @@ class Array:
             3. Must achieve a minimum of 92% code coverage through unit testing.
     """
 
-    def __init__(self, size: int = 0, *items) -> None:
+    def __init__(self, *items, size=0) -> None:
         """ Constructor
-            Usage:  array = Array(10)
-            @:param size the desired size of the Array (optional if providing instance)
+            Usages:  1. array = Array(size=10)
+                     2. array = Array('A', 'B', 'C') 
+                     3. array = Array(['A', 'B', 'C'])
+                     4. array = Array(('A', 'B', 'C'))
             @:param *items a variable list of arguments that contain the items to be deep copied into the Array.
+            @:param size the desired size of the Array (use 0 if providing initialization items)
+                     Note: An Array can be initialized using a list or tuple, which must be flattened.
             @:return none
             @:raises TypeError if instance is provided and it is not an Array instance
         """
@@ -31,6 +35,7 @@ class Array:
             """
         raise NotImplementedError
 
+
     def __getitem__(self, index: int) -> Any:
         """ Bracket operator for getting an item
             Usage: val = array[0]
@@ -39,6 +44,7 @@ class Array:
             @:raises IndexError if the index is out of bounds
         """
         raise NotImplementedError
+
 
     def __setitem__(self, index: int, item: Any) -> None:
         """ Bracket operator for setting an item
@@ -49,6 +55,7 @@ class Array:
             @:return none
         """
         raise NotImplementedError
+
 
     def __len__(self) -> int:
         """ len operator for getting length of the array
@@ -65,6 +72,7 @@ class Array:
         """
         raise NotImplementedError
 
+
     def __eq__(self, other: 'Array') -> bool:
         """ Equality operator ==
             Usage: are_equal = array1 == array2
@@ -72,6 +80,7 @@ class Array:
             @:return true if the arrays are equal (deep check)
         """
         raise NotImplementedError
+
     
     def __ne__(self, other: 'Array') -> bool:
         """ Non-equality operator !=
@@ -88,12 +97,14 @@ class Array:
         """
         raise NotImplementedError
 
+
     def __reversed__(self) -> Any:
         """ Reversed iterator operator
             Usage: for item in reversed(array):
             @:return yields the item at index starting at the end
         """
         raise NotImplementedError
+
 
     def __delitem__(self, index: int) -> None:
         """ Delete an item in the array. Copies the array contents from index + 1 down
@@ -104,6 +115,7 @@ class Array:
             @:return none
         """
         raise NotImplementedError
+
 
     def __contains__(self, item: Any) -> bool:
         """ Contains operator (in)
