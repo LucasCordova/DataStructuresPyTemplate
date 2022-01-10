@@ -25,7 +25,6 @@ class Tuple:
         """
         raise NotImplementedError
 
-
     @classmethod
     def clone(cls, tuple_instance: 'Tuple') -> 'Tuple':
         """ Clone the Tuple
