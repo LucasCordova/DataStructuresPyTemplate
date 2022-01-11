@@ -23,8 +23,7 @@ class Tuple:
             @:return none
             @:raises TypeError if instance is provided and it is not a Tuple instance
         """
-        flattened_items = tuple(Tuple._flatten_helper(items))
-        self._items = deepcopy(flattened_items)
+        raise NotImplementedError
 
     @classmethod
     def clone(cls, tuple_instance: 'Tuple') -> 'Tuple':
@@ -34,9 +33,7 @@ class Tuple:
             @:return a deep object copy of the tuple
             @:raises TypeError if instance is provided and it is not an Tuple instance
         """
-        if tuple_instance is not None and not isinstance(tuple_instance, Tuple):
-            raise TypeError('Instance is not a Tuple')
-        return cls(tuple_instance._items)
+        raise NotImplementedError
 
 
     @staticmethod
@@ -44,11 +41,7 @@ class Tuple:
         """ This is a private helper function that flattens data down to individual items.
             This is not part of the list of methods provided to students
         """
-        if (isinstance (items,tuple)):
-            for item in items:
-                yield from Tuple._flatten_helper(item)
-        else:
-            yield items
+        raise NotImplementedError
 
 
     def __getitem__(self, index: int) -> Any:
@@ -86,7 +79,7 @@ class Tuple:
             @:param none
             @:return _data the tuple containing the Tuple's data
         """
-        return self._items
+        raise NotImplementedError
 
     def __iter__(self) -> Any:
         """ Iterator operator
